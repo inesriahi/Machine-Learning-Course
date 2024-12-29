@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Car Price Prediction</h1>
+        <p class="text-center">Fill in the details below to predict the car price category:</p>
+
+        <form id="predictionForm" class="row g-3">
+            <!-- Row 1 -->
+            <div class="col-md-6">
+                <label for="Levy" class="form-label">Levy (0 if none):</label>
+                <input type="number" id="Levy" name="Levy" class="form-control" required value="1399">
+            </div>
+            <div class="col-md-6">
+                <label for="Prod_year" class="form-label">Production Year:</label>
+                <input type="number" id="Prod_year" name="Prod_year" class="form-control" min="1886" max="2024" required value="2020">
+            </div>
+
+            <!-- Row 2 -->
+            <div class="col-md-6">
+                <label for="Manufacturer" class="form-label">Manufacturer:</label>
+                <select id="Manufacturer" name="Manufacturer" class="form-select" required>
+                    <option>LEXUS</option>
+                    <option value="">-- Select Manufacturer --</option>
+                    <option>CHEVROLET</option>
+                    <option>HONDA</option>
+                    <option>FORD</option>
+                    <option>HYUNDAI</option>
+                    <option>TOYOTA</option>
+                    <option>MERCEDES-BENZ</option>
+                    <option>OPEL</option>
+                    <option>PORSCHE</option>
+                    <option>BMW</option>
+                    <option>JEEP</option>
+                    <option>VOLKSWAGEN</option>
+                    <option>AUDI</option>
+                    <option>RENAULT</option>
+                    <option>NISSAN</option>
+                    <option>SUBARU</option>
+                    <option>DAEWOO</option>
+                    <option>KIA</option>
+                    <option>MITSUBISHI</option>
+                    <option>SSANGYONG</option>
+                    <option>MAZDA</option>
+                    <option>GMC</option>
+                    <option>FIAT</option>
+                    <option>INFINITI</option>
+                    <option>ALFA ROMEO</option>
+                    <option>SUZUKI</option>
+                    <option>ACURA</option>
+                    <option>LINCOLN</option>
+                    <option>VAZ</option>
+                    <option>GAZ</option>
+                    <option>CITROEN</option>
+                    <option>LAND ROVER</option>
+                    <option>MINI</option>
+                    <option>DODGE</option>
+                    <option>CHRYSLER</option>
+                    <option>JAGUAR</option>
+                    <option>ISUZU</option>
+                    <option>SKODA</option>
+                    <option>DAIHATSU</option>
+                    <option>BUICK</option>
+                    <option>TESLA</option>
+                    <option>CADILLAC</option>
+                    <option>PEUGEOT</option>
+                    <option>BENTLEY</option>
+                    <option>VOLVO</option>
+                    <option>HAVAL</option>
+                    <option>HUMMER</option>
+                    <option>SCION</option>
+                    <option>UAZ</option>
+                    <option>MERCURY</option>
+                    <option>ZAZ</option>
+                    <option>ROVER</option>
+                    <option>SEAT</option>
+                    <option>LANCIA</option>
+                    <option>MOSKVICH</option>
+                    <option>MASERATI</option>
+                    <option>FERRARI</option>
+                    <option>SAAB</option>
+                    <option>LAMBORGHINI</option>
+                    <option>ROLLS-ROYCE</option>
+                    <option>PONTIAC</option>
+                    <option>SATURN</option>
+                    <option>ASTON MARTIN</option>
+                    <option>GREATWALL</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="Model" class="form-label">Model:</label>
+                <input type="text" id="Model" name="Model" class="form-control" required value="RX 450">
+            </div>
+
+            <!-- Row 3 -->
+            <div class="col-md-6">
+                <label for="Category" class="form-label">Category:</label>
+                <select id="Category" name="Category" class="form-select" required>
+                    <option>Jeep</option>
+                    <option value="">-- Select Category --</option>
+                    <option>Hatchback</option>
+                    <option>Sedan</option>
+                    <option>Microbus</option>
+                    <option>Goods wagon</option>
+                    <option>Universal</option>
+                    <option>Coupe</option>
+                    <option>Minivan</option>
+                    <option>Cabriolet</option>
+                    <option>Limousine</option>
+                    <option>Pickup</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="Fuel_type" class="form-label">Fuel Type:</label>
+                <select id="Fuel_type" name="Fuel_type" class="form-select" required>
+                    <option>Hybrid</option>
+                    <option value="">-- Select Fuel Type --</option>
+                    <option>Petrol</option>
+                    <option>Diesel</option>
+                    <option>LPG</option>
+                    <option>CNG</option>
+                    <option>Plug-in Hybrid</option>
+                    <option>Hydrogen</option>
+                </select>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="col-md-6">
+                <label for="Leather_interior" class="form-label">Leather Interior:</label>
+                <select id="Leather_interior" name="Leather_interior" class="form-select" required>
+                    <option value="Yes">Yes</option>
+                    <option value="">-- Select Option --</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="Gear_box_type" class="form-label">Gear Box Type:</label>
+                <select id="Gear_box_type" name="Gear_box_type" class="form-select" required>
+                    <option>Automatic</option>
+                    <option value="">-- Select Gear Box Type --</option>
+                    <option>Tiptronic</option>
+                    <option>Manual</option>
+                    <option>Variator</option>
+                </select>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="col-md-6">
+                <label for="Engine_volume" class="form-label">Engine Volume:</label>
+                <input type="number" step="0.1" id="Engine_volume" name="Engine_volume" class="form-control" required value="4">
+            </div>
+            <div class="col-md-6">
+                <label for="Mileage" class="form-label">Mileage:</label>
+                <input type="number" id="Mileage" name="Mileage" class="form-control" required value="156423">
+            </div>
+
+            <!-- Row 6 -->
+            <div class="col-md-6">
+                <label for="Wheel" class="form-label">Wheel:</label>
+                <select id="Wheel" name="Wheel" class="form-select" required>
+                    <option>Left wheel</option>
+                    <option value="">-- Select Wheel Position --</option>
+                    <option>Right-hand drive</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="Color" class="form-label">Color:</label>
+                <select id="Color" name="Color" class="form-select" required>
+                    <option>Silver</option>
+                    <option value="">-- Select Color --</option>
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Grey</option>
+                    <option>Blue</option>
+                    <option>Beige</option>
+                    <option>Sky blue</option>
+                    <option>Yellow</option>
+                    <option>Purple</option>
+                    <option>Pink</option>
+                </select>
+            </div>
+
+            <!-- Row 7 -->
+            <div class="col-md-6">
+                <label for="Drive_wheels" class="form-label">Drive Wheels:</label>
+                <input type="text" id="Drive_wheels" name="Drive_wheels" class="form-control" required value="4x4">
+            </div>
+            <div class="col-md-6">
+                <label for="Airbags" class="form-label">Airbags:</label>
+                <input type="number" id="Airbags" name="Airbags" class="form-control" required value="12">
+            </div>
+
+            <div class="col-md-6">
+                <label for="Cylinders" class="form-label">Cylinders:</label>
+                <input type="number" id="Cylinders" name="Cylinders" class="form-control" required value="6">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12 text-center">
+                <button type="button" onclick="submitForm()" class="btn btn-primary btn-lg">Predict</button>
+            </div>
+        </form>
+
+        <!-- Output Section -->
+        <div class="output mt-4" id="output"></div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        async function submitForm() {
+            const form = document.getElementById('predictionForm');
+            const formData = new FormData(form);
+            const data = {};
+        
+            // Convert form data to JSON object
+            formData.forEach((value, key) => {
+                // Parse numbers where applicable
+                if (!isNaN(Number(value)) && value !== "") {
+                    data[key] = parseFloat(value);
+                } else {
+                    data[key] = value;
+                }
+            });
+        
+            console.log("Data being sent:", data); // Debugging
+        
+            try {
+                const response = await fetch("http://127.0.0.1:8000/predict/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data) // Send data as JSON
+                });
+        
+                if (response.ok) {
+                    const result = await response.json();
+                    document.getElementById("output").innerHTML = 
+                        `<div class="alert alert-success">Prediction: ${JSON.stringify(result["prediction"])}</div>`;
+                } else {
+                    const error = await response.json();
+                    document.getElementById("output").innerHTML = 
+                        `<div class="alert alert-danger">Error: ${JSON.stringify(error.detail)}</div>`;
+                }
+            } catch (err) {
+                document.getElementById("output").innerHTML = 
+                    `<div class="alert alert-danger">An unexpected error occurred: ${err}</div>`;
+            }
+        }
+    </script>        
+</body>
+</html>
